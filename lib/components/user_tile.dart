@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:meu_crediario/models/user.dart';
+import 'package:meu_crediario/routes/app_routes.dart';
 
 class UserTile extends StatelessWidget {
   final User user;
@@ -23,17 +24,32 @@ class UserTile extends StatelessWidget {
         child: Row(
           children: <Widget>[
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  AppRoutes.USER_FORM,
+                  arguments: user,
+                );
+              },
               icon: Icon(Icons.edit),
               color: Colors.orange,
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  AppRoutes.PAGAMENTO_FORM,
+                  arguments: user,
+                );
+              },
               icon: Icon(Icons.attach_money),
               color: Colors.green,
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  AppRoutes.NOVA_COMPRA,
+                  arguments: user,
+                );
+              },
               icon: Icon(Icons.shopping_cart),
               color: Colors.greenAccent,
             ),
