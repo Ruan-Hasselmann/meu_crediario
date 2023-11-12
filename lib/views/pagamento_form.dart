@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 class PagamentoForm extends StatelessWidget {
@@ -6,10 +8,17 @@ class PagamentoForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
-        title: const Text('Resgistrar pagamento'),
-      ),
-    );
+        appBar: AppBar(
+          backgroundColor: Colors.lightBlue,
+          title: const Text('Resgistrar pagamento'),
+        ),
+        body: Padding(
+          padding: EdgeInsets.all(15),
+          child: ListView(
+            children: [
+              Text("EM CONSTRUÇÂO"),
+            ],
+          ),
+        ));
   }
 }

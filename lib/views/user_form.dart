@@ -7,39 +7,51 @@ import 'package:meu_crediario/models/user.dart';
 import 'package:meu_crediario/provider/users.dart';
 import 'package:provider/provider.dart';
 
-class UserForm extends StatelessWidget {
-  final _form = GlobalKey<FormState>();
-  final Map<String, String> _formData = {};
-
+class UserForm extends StatefulWidget {
   UserForm({Key? key}) : super(key: key);
 
-  void _loadFormData(User user) {
-    _formData['id'] = user.id!;
-    _formData['nome'] = user.nome;
-    _formData['CPF'] = user.cpf;
-    _formData['RG'] = user.rg;
-    _formData['telefone'] = user.telefone;
-    _formData['vendedor'] = user.vendedor;
-    _formData['cep'] = user.endereco.cep;
-    _formData['logradouro'] = user.endereco.logradouro;
-    _formData['numero'] = user.endereco.numero;
-    _formData['bairro'] = user.endereco.bairro;
-    _formData['cidade'] = user.endereco.cidade;
-    _formData['UF'] = user.endereco.uf;
-    _formData['complemento'] = user.endereco.complemento;
-    _formData['proxPag'] = user.pagamento.proxPagamento;
-    _formData['entrada'] = user.pagamento.entrada.toString();
-    _formData['formPag'] = user.pagamento.formaPagamento;
-    _formData['tipoPag'] = user.pagamento.tipoPagamento;
-    _formData['total'] = user.pagamento.total.toString();
+  @override
+  State<UserForm> createState() => _UserFormState();
+}
+
+class _UserFormState extends State<UserForm> {
+  final _form = GlobalKey<FormState>();
+
+  final Map<String, String> _formData = {};
+
+  void _loadFormData(User? user) {
+    if (user != null) {
+      _formData['id'] = user.id!;
+      _formData['nome'] = user.nome;
+      _formData['CPF'] = user.cpf;
+      _formData['RG'] = user.rg;
+      _formData['telefone'] = user.telefone;
+      _formData['vendedor'] = user.vendedor;
+      _formData['cep'] = user.endereco.cep;
+      _formData['logradouro'] = user.endereco.logradouro;
+      _formData['numero'] = user.endereco.numero;
+      _formData['bairro'] = user.endereco.bairro;
+      _formData['cidade'] = user.endereco.cidade;
+      _formData['UF'] = user.endereco.uf;
+      _formData['complemento'] = user.endereco.complemento;
+      _formData['proxPag'] = user.pagamento.proxPagamento;
+      _formData['entrada'] = user.pagamento.entrada.toString();
+      _formData['formPag'] = user.pagamento.formaPagamento;
+      _formData['tipoPag'] = user.pagamento.tipoPagamento;
+      _formData['total'] = user.pagamento.total.toString();
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    final user = ModalRoute.of(context)!.settings.arguments as User?;
+    _loadFormData(user);
   }
 
   @override
   Widget build(BuildContext context) {
-    final user = ModalRoute.of(context)!.settings.arguments as User;
-
-    _loadFormData(user);
-
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.lightBlue,
