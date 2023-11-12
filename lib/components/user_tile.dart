@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:meu_crediario/models/user.dart';
@@ -15,8 +15,7 @@ class UserTile extends StatelessWidget {
     //     ? CircleAvatar(child: Icon(Icons.person))
     //     : CircleAvatar(backgroundImage: NetworkImage(user.avatar));
     return ListTile(
-      // leading: avatar,
-      title: Text("${user.nome} ${user.pagamento.proxPagamento}"),
+      title: Text("${user.nome} - ${user.pagamento.proxPagamento}"),
       subtitle: Text(
           "Endereço: ${user.endereco.logradouro} Nº: ${user.endereco.numero} Bairro: ${user.endereco.bairro}"),
       trailing: Container(

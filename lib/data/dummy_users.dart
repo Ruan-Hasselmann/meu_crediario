@@ -19,7 +19,7 @@ const DUMMY_USERS = {
           uf: "RS",
           complemento: "Esquina"),
       pagamento: Pagamento(
-          proxPagamento: "proxPagamento",
+          proxPagamento: "12/12/2023",
           entrada: 200,
           formaPagamento: "formaPagamento",
           tipoPagamento: "tipoPagamento",
@@ -40,7 +40,7 @@ const DUMMY_USERS = {
           uf: "RS",
           complemento: "Esquina"),
       pagamento: Pagamento(
-          proxPagamento: "proxPagamento",
+          proxPagamento: "12/12/2023",
           entrada: 200,
           formaPagamento: "formaPagamento",
           tipoPagamento: "tipoPagamento",
@@ -61,7 +61,7 @@ const DUMMY_USERS = {
           uf: "RS",
           complemento: "Esquina"),
       pagamento: Pagamento(
-          proxPagamento: "proxPagamento",
+          proxPagamento: "12/12/2023",
           entrada: 200,
           formaPagamento: "formaPagamento",
           tipoPagamento: "tipoPagamento",
