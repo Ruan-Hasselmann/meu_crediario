@@ -1,12 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:meu_crediario/components/user_tile.dart';
-import 'package:meu_crediario/models/endereco.dart';
-import 'package:meu_crediario/models/pagamento.dart';
-import 'package:meu_crediario/models/user.dart';
 import 'package:meu_crediario/provider/users.dart';
 import 'package:meu_crediario/routes/app_routes.dart';
 import 'package:provider/provider.dart';
